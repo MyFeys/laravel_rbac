@@ -28,6 +28,7 @@
 
         <div class="col-md-5">
             <form method="post" action="{{ url('/admin/login') }}">
+                {!! csrf_field() !!}
                 @if($errors->first())
                     <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -43,7 +44,7 @@
                 <a href="#">
                     <small>忘记密码?</small>
                 </a>
-                <input type="hidden" class="form-control" name="_token" value="{{ csrf_token() }}">
+
                 <button type="submit" class="btn btn-success btn-block">登陆</button>
             </form>
         </div><!-- col-sm-5 -->
